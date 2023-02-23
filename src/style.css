@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: #272727;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+#array-container {
+    display: flex;
+    width: 90vw;
+}
+
+#options {
+    display: flex;
+    justify-content: flex-start;
+    width: 100vw;
+    margin-top: 10px;
+    gap: 30px;
+}
+
+.array-elem {
+    border: 1px solid black;
+    background: white;
+}
+
+#left-buttons {
+    margin-top: 12px;
+}
+
+#sort-selection {
+    width: 58vw;
+    margin-left: 100px;
+    position: relative;
+}
+
+.sort-button {
+    color: #f6f4e6;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 16.66%;
+    text-align: center;
+}
+
+.sort-button:hover {
+    color: #fddb3a;
+    cursor: pointer;
+}
+
+.sort-button.active {
+    color: #fddb3a;
+}
+
+#sort-selection .sort-button:hover~#dot,
+#dot.active {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+
+}
+
+#sort-selection .sort-button:nth-child(1):hover~#dot {
+    left: 8.33%;
+}
+
+#sort-selection .sort-button:nth-child(2):hover~#dot {
+    left: 25%;
+}
+
+#sort-selection .sort-button:nth-child(3):hover~#dot {
+    left: 41.66%;
+}
+
+#sort-selection .sort-button:nth-child(4):hover~#dot {
+    left: 58.33%;
+}
+
+#sort-selection .sort-button:nth-child(5):hover~#dot {
+    left: 75%;
+}
+
+#sort-selection .sort-button:nth-child(6):hover~#dot {
+    left: 91.66%;
+}
+
+#sort-selection:before {
+    content: "Choose a sort";
+    font-size: calc(100% - 2pt);
+    display: block;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0.4em;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+#sort-selection:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #fddb3a;
+    top: 30px;
+}
+
+
+#dot {
+    width: 6px;
+    height: 6px;
+    background: #fddb3a;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    left: 0%;
+    top: 27px;
+}
+
+#sliders {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type=range] {
+    background: transparent;
+    -webkit-appearance: none;
+    height: 15px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid black;
+    background: #fddb3a;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translateY(-40%);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.703);
+}
+
+#right-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    margin-top: -5px;
+}
+
+#right-buttons button {
+    border: 2px solid rgba(255, 255, 255, 0.703);
+    color: white;
+    background: none;
+    font: inherit;
+    font-size: calc(100% - 1pt);
+    padding: 2px 12px;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+
+#right-buttons button:hover {
+    box-shadow: inset 0 0 0 2em #fddc3ac5;
+    cursor: pointer;
+}
+
+#sort-button.inactive:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+}
